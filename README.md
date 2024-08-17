@@ -1,8 +1,12 @@
-# React + Vite
+# WHP Website 2024
+The goal is to create a website that shows my current work, and displays it in a exciting manner.
+My current idea is to create a 3D museum that can be explored on mobile, computers, and in VR.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tools used
+- React
+- Three.js
+- React Three Fiber - Connect Three to React
+- [React Three Drei](https://github.com/pmndrs/drei) - Helper libraries
+- React Three XR - Hopefully make it VR
+- Leva - Debug
+- [GLTFJSX](https://github.com/pmndrs/gltfjsx) - Compress GLTFs into JSX modules
