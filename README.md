@@ -4,9 +4,15 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
 
 ## Tools used
 - React
-- Three.js
-- React Three Fiber - Connect Three to React
+- [Three.js](https://threejs.org/)
+- [React Three Fiber](https://github.com/pmndrs/react-three-fiber) - Connect Three to React
 - [React Three Drei](https://github.com/pmndrs/drei) - Helper libraries
-- React Three XR - Hopefully make it VR
-- Leva - Debug
+- [React Three XR](https://github.com/pmndrs/xr) - Hopefully make it VR
+- [Leva](https://github.com/pmndrs/leva) - Debug
 - [GLTFJSX](https://github.com/pmndrs/gltfjsx) - Compress GLTFs into JSX modules
+
+## Todo
+-[] Get animation working
+    - GSAP
+    - Framer Motion 3D
+-[] Figure out what I want to create lol 
