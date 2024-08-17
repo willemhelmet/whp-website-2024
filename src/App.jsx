@@ -14,8 +14,8 @@ function App() {
           <XR store={store}>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            {/* <Box position={[-2.2, 0, 0]} />
-            <Box position={[2.2, 0, 0]} /> */}
+            <Box position={[-2.2, 0, 0]} />
+            <Box position={[2.2, 0, 0]} />
             <Suzanne/>
           </XR>
         </Canvas>

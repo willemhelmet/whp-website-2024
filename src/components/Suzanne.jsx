@@ -4,12 +4,26 @@ Command: npx gltfjsx@6.5.0 Suzanne.glb --transform
 Files: Suzanne.glb [356.38KB] > /Users/whp/Documents/HTML/whp-website-2024/public/models/Suzanne-transformed.glb [51.71KB] (85%)
 */
 import { useGLTF } from '@react-three/drei'
+import * as THREE from "three";
 
 export function Suzanne(props) {
+  const cubeTextureLoader = new THREE.CubeTextureLoader();
+
+const environmentMapTexture = cubeTextureLoader.load([
+  "/textures/environments/pisa/px.png",
+  "/textures/environments/pisa/nx.png",
+  "/textures/environments/pisa/py.png",
+  "/textures/environments/pisa/ny.png",
+  "/textures/environments/pisa/pz.png",
+  "/textures/environments/pisa/nz.png",
+]);
+
+const material = new THREE.MeshStandardMaterial();
+material.envMap = environmentMapTexture;
   const { nodes, materials } = useGLTF('/models/Suzanne-transformed.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Suzanne.geometry} material={nodes.Suzanne.materials} />
+      <mesh geometry={nodes.Suzanne.geometry} material={material} />
     </group>
   )
 }
