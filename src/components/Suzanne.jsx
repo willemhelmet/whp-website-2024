@@ -4,21 +4,23 @@ Command: npx gltfjsx@6.5.0 Suzanne.glb --transform
 Files: Suzanne.glb [356.38KB] > /Users/whp/Documents/HTML/whp-website-2024/public/models/Suzanne-transformed.glb [51.71KB] (85%)
 */
 import { useRef } from "react";
-import { useGLTF, useCubeTexture } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+
+import { pisaEnvMap } from "../modules/envMaps";
 
 export function Suzanne(props) {
   // I feel like in the future this should be a module
   // that will be imported into these objects
-  const envMap = useCubeTexture(
+  /* const envMap = useCubeTexture(
     ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
     { path: "/textures/environments/pisa/" },
-  );
+  ); */
   const { nodes, materials } = useGLTF("/models/Suzanne-transformed.glb");
 
   // Since I did not create a material, we have to use [""] to
   // reference the MeshStandardMaterial that is auto-generated for us.
-  materials[""].envMap = envMap;
+  materials[""].envMap = pisaEnvMap;
 
   const ref = useRef();
   useFrame((state, delta) => {
