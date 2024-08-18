@@ -6,17 +6,18 @@ Files: smile.glb [30.77KB] > /Users/whp/Documents/HTML/whp-website-2024/public/m
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { motion } from "framer-motion-3d";
 
 export function Smiley(props) {
   const ref = useRef();
   const { nodes, materials } = useGLTF("/models/smile-transformed.glb");
   useFrame((state, delta) => {
-    materials.Material.color.r = Math.sin(state.clock.getElapsedTime());
+    //materials.Material.color.r = Math.sin(state.clock.getElapsedTime());
     ref.current.rotation.y += delta * 3.0;
   });
   return (
     <group {...props} dispose={null}>
-      <mesh
+      <motion.mesh
         ref={ref}
         geometry={nodes.Smile.geometry}
         material={materials.Material}
