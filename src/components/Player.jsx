@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, PointerLockControls } from "@react-three/drei";
 import Crosshair from "./Crosshair";
 import { useMyStore } from "../utils/store";
 import * as THREE from "three";
@@ -19,6 +19,8 @@ function Player() {
   const { camera } = useThree();
 
   const {
+    isMouseCaptured,
+    setIsMouseCaptured,
     forward,
     backward,
     left,
@@ -28,6 +30,10 @@ function Player() {
     setLeft,
     setRight,
   } = useMyStore();
+
+  useEffect(() => {
+    console.log("isMouseCaptured: " + isMouseCaptured);
+  }, [isMouseCaptured]);
 
   const handleKeyDown = useCallback(
     (e) => {
@@ -96,9 +102,15 @@ function Player() {
     ref.current.position.z += direction.z;
   });
   return (
-    <PerspectiveCamera ref={ref} makeDefault position={[0, 0, 0]}>
-      <Crosshair />
-    </PerspectiveCamera>
+    <group>
+      <PerspectiveCamera ref={ref} makeDefault position={[0, 0, 0]}>
+        <Crosshair />
+      </PerspectiveCamera>
+      <PointerLockControls
+        onLock={() => setIsMouseCaptured(true)}
+        onUnlock={() => setIsMouseCaptured(false)}
+      />
+    </group>
   );
 }
 
