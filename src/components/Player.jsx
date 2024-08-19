@@ -85,19 +85,6 @@ function Player() {
   }, [handleKeyDown, handleKeyUp]);
 
   useFrame(() => {
-    // WHP - my goofy bad implementation
-    // if (forward) {
-    //   ref.current.position.z -= 0.1;
-    // }
-    // if (backward) {
-    //   ref.current.position.z += 0.1;
-    // }
-    // if (left) {
-    //   ref.current.position.x -= 0.1;
-    // }
-    // if (right) {
-    //   ref.current.position.x += 0.1;
-    // }
     frontVector.set(0, 0, Number(backward) - Number(forward));
     sideVector.set(Number(left) - Number(right), 0, 0);
     direction
