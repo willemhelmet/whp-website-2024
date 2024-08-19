@@ -1,14 +1,22 @@
 import { useCallback, useEffect, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import Crosshair from "./Crosshair";
 import { useMyStore } from "../utils/store";
+import * as THREE from "three";
 
 /** TODO:
  * Implement WSAD movement
  */
 function Player() {
   const ref = useRef();
+
+  const direction = new THREE.Vector3();
+  const frontVector = new THREE.Vector3();
+  const sideVector = new THREE.Vector3();
+  const SPEED_SCALAR = 0.25;
+
+  const { camera } = useThree();
 
   const {
     forward,
@@ -77,19 +85,28 @@ function Player() {
   }, [handleKeyDown, handleKeyUp]);
 
   useFrame(() => {
-    if (forward) {
-      console.log("Forward");
-      ref.current.position.z -= 0.1;
-    } else if (backward) {
-      console.log("Backward");
-      ref.current.position.z += 0.1;
-    } else if (left) {
-      console.log("Left");
-      ref.current.position.x -= 0.1;
-    } else if (right) {
-      console.log("Right");
-      ref.current.position.x += 0.1;
-    }
+    // WHP - my goofy bad implementation
+    // if (forward) {
+    //   ref.current.position.z -= 0.1;
+    // }
+    // if (backward) {
+    //   ref.current.position.z += 0.1;
+    // }
+    // if (left) {
+    //   ref.current.position.x -= 0.1;
+    // }
+    // if (right) {
+    //   ref.current.position.x += 0.1;
+    // }
+    frontVector.set(0, 0, Number(backward) - Number(forward));
+    sideVector.set(Number(left) - Number(right), 0, 0);
+    direction
+      .subVectors(frontVector, sideVector)
+      .normalize()
+      .multiplyScalar(SPEED_SCALAR)
+      .applyEuler(camera.rotation);
+    ref.current.position.x += direction.x;
+    ref.current.position.z += direction.z;
   });
   return (
     <PerspectiveCamera ref={ref} makeDefault position={[0, 0, 0]}>
