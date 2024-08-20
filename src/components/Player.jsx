@@ -14,7 +14,7 @@ function Player() {
   const direction = new THREE.Vector3();
   const frontVector = new THREE.Vector3();
   const sideVector = new THREE.Vector3();
-  const SPEED_SCALAR = 0.25;
+  const SPEED_SCALAR = 0.05;
 
   const { camera } = useThree();
 
