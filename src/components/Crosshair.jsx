@@ -21,7 +21,6 @@ function Crosshair() {
           depthTest={false}
           depthWrite={false}
           transparent={true}
-          // visible={crosshairVisible}
         />
       </motion.mesh>
     </group>

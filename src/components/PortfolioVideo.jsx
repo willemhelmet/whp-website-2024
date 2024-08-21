@@ -1,4 +1,5 @@
 import { Plane, useVideoTexture } from "@react-three/drei";
+import { useMyStore } from "../utils/store";
 
 /** TODO:
  * Resize Plane so that video's dimensions are correct
@@ -7,8 +8,15 @@ import { Plane, useVideoTexture } from "@react-three/drei";
  */
 function PortfolioVideo(props) {
   const videoTexture = useVideoTexture(props.src);
+  const size = [props.width * props.scale, props.height * props.scale];
+  const { setCrosshairVisibility } = useMyStore();
   return (
-    <Plane {...props} args={[1, 1]}>
+    <Plane
+      {...props}
+      args={size}
+      onPointerOver={() => setCrosshairVisibility(true)}
+      onPointerOut={() => setCrosshairVisibility(false)}
+    >
       <meshBasicMaterial map={videoTexture} toneMapped={false} />
     </Plane>
   );

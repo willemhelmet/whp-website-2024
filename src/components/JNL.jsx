@@ -6,19 +6,19 @@ Files: JNL.glb [1.27MB] > /Users/whp/Desktop/JNL/JNL Blender/Exports/JNL-transfo
 
 import React from "react";
 import { useGLTF } from "@react-three/drei";
+import { pisaEnvMap } from "../modules/envMaps";
 
 export function JNL(props) {
   const { nodes, materials } = useGLTF("/models/JNL-transformed.glb");
-  console.log(nodes);
   return (
     <group {...props} dispose={null}>
       <mesh
+        receiveShadow
         geometry={nodes.Loft_Handrails_02.geometry}
-        // material={nodes.Loft_Handrails_02.material}
         rotation={[0, Math.PI / 2, 0]}
         position={[0, -1, 0]}
       >
-        <meshStandardMaterial />
+        <meshStandardMaterial envMap={pisaEnvMap} />
       </mesh>
     </group>
   );
