@@ -4,11 +4,13 @@ import { Smiley } from "./Smiley";
 import { Sky } from "@react-three/drei";
 import PortfolioImage from "./PortfolioImage.jsx";
 import PortfolioVideo from "./PortfolioVideo.jsx";
+import { JNL } from "./JNL.jsx";
 
 function World() {
   return (
     <group>
       <Floor />
+      <JNL />
       <Suzanne castShadow position={[0, 0, -7.5]} />
       <Smiley
         castShadow

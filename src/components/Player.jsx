@@ -6,7 +6,7 @@ import { useMyStore } from "../utils/store";
 import * as THREE from "three";
 
 /** TODO:
- * Implement WSAD movement
+ * Look into changng WSAD into a physics based system
  */
 function Player() {
   const ref = useRef();
@@ -54,7 +54,7 @@ function Player() {
           return;
       }
     },
-    [setForward, setBackward, setLeft, setRight]
+    [setForward, setBackward, setLeft, setRight],
   );
 
   const handleKeyUp = useCallback(
@@ -76,7 +76,7 @@ function Player() {
           return;
       }
     },
-    [setForward, setBackward, setLeft, setRight]
+    [setForward, setBackward, setLeft, setRight],
   );
 
   useEffect(() => {

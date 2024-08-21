@@ -1,5 +1,5 @@
-import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
+import { Canvas } from "@react-three/fiber";
 
 import Lighting from "./components/Lighting.jsx";
 import Player from "./components/Player.jsx";

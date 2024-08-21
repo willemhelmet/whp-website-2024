@@ -11,7 +11,7 @@ import { motion } from "framer-motion-3d";
 export function Smiley(props) {
   const ref = useRef();
   const { nodes, materials } = useGLTF("/models/smile-transformed.glb");
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     //materials.Material.color.r = Math.sin(state.clock.getElapsedTime());
     ref.current.rotation.y += delta * 3.0;
   });

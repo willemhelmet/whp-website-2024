@@ -7,7 +7,6 @@ import { Plane, useVideoTexture } from "@react-three/drei";
  */
 function PortfolioVideo(props) {
   const videoTexture = useVideoTexture(props.src);
-  console.log(videoTexture);
   return (
     <Plane {...props} args={[1, 1]}>
       <meshBasicMaterial map={videoTexture} toneMapped={false} />

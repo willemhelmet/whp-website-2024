@@ -14,7 +14,9 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
 - Framer Motion 3D
 
 ## Todo
--[x] Get animation working
-    - GSAP
+- [x] Get animation working
     - Framer Motion 3D
--[] Get FPS controls working
+- [x] Get FPS controls working
+
+## Inspo
+- https://www.youtube.com/watch?v=I0kKUGTi8hw
