@@ -2,17 +2,31 @@ import { extend } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 import { CrosshairMaterial } from "../modules/shaders/CrosshairMaterial";
 import { useMyStore } from "../utils/store";
+import { useEffect } from "react";
 
 function Crosshair() {
-  const { crosshairVisible } = useMyStore();
+  const { crosshairVisible, crosshairScale, setCrosshairScale } = useMyStore();
 
   extend({ CrosshairMaterial });
+
+  useEffect(() => {
+    const handleMouseDown = (event) => setCrosshairScale(0.7);
+    const handleMouseUp = (event) => setCrosshairScale(1);
+
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, []);
 
   return (
     <group>
       <motion.mesh
         position={[0, 0, -10.11]}
-        animate={{ scale: crosshairVisible ? 1 : 0 }}
+        animate={{ scale: crosshairVisible ? crosshairScale : 0 }}
       >
         <planeGeometry args={[1, 1]} />
         <crosshairMaterial
