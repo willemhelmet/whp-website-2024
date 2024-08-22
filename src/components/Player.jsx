@@ -25,10 +25,7 @@ function Player() {
     backward,
     left,
     right,
-    setForward,
-    setBackward,
-    setLeft,
-    setRight,
+    movementActions,
   } = useMyStore();
 
   useEffect(() => {
@@ -39,44 +36,44 @@ function Player() {
     (e) => {
       switch (e.code) {
         case "KeyW":
-          setForward(true);
+          movementActions.setForward(true);
           break;
         case "KeyS":
-          setBackward(true);
+          movementActions.setBackward(true);
           break;
         case "KeyA":
-          setLeft(true);
+          movementActions.setLeft(true);
           break;
         case "KeyD":
-          setRight(true);
+          movementActions.setRight(true);
           break;
         default:
           return;
       }
     },
-    [setForward, setBackward, setLeft, setRight],
+    [movementActions],
   );
 
   const handleKeyUp = useCallback(
     (e) => {
       switch (e.code) {
         case "KeyW":
-          setForward(false);
+          movementActions.setForward(false);
           break;
         case "KeyS":
-          setBackward(false);
+          movementActions.setBackward(false);
           break;
         case "KeyA":
-          setLeft(false);
+          movementActions.setLeft(false);
           break;
         case "KeyD":
-          setRight(false);
+          movementActions.setRight(false);
           break;
         default:
           return;
       }
     },
-    [setForward, setBackward, setLeft, setRight],
+    [movementActions],
   );
 
   useEffect(() => {

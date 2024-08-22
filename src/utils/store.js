@@ -11,8 +11,19 @@ export const useMyStore = create((set) => ({
     set(() => ({
       crosshairVisible: val,
     })),
+
   // handle mouse captured state
   isMouseCaptured: false,
+  crosshairActions: {
+    setIsMouseCaptured: (val) =>
+      set(() => ({
+        isMouseCaptured: val,
+      })),
+    setCrosshairScale: (val) =>
+      set(() => ({
+        crosshairScale: val,
+      })),
+  },
   setIsMouseCaptured: (val) =>
     set(() => ({
       isMouseCaptured: val,
@@ -22,25 +33,28 @@ export const useMyStore = create((set) => ({
     set(() => ({
       crosshairScale: val,
     })),
+
   // Handle player input
   forward: false,
   backward: false,
   left: false,
   right: false,
-  setForward: (val) =>
-    set(() => ({
-      forward: val,
-    })),
-  setBackward: (val) =>
-    set(() => ({
-      backward: val,
-    })),
-  setLeft: (val) =>
-    set(() => ({
-      left: val,
-    })),
-  setRight: (val) =>
-    set(() => ({
-      right: val,
-    })),
+  movementActions: {
+    setForward: (val) =>
+      set(() => ({
+        forward: val,
+      })),
+    setBackward: (val) =>
+      set(() => ({
+        backward: val,
+      })),
+    setLeft: (val) =>
+      set(() => ({
+        left: val,
+      })),
+    setRight: (val) =>
+      set(() => ({
+        right: val,
+      })),
+  },
 }));

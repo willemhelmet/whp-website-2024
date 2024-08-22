@@ -5,13 +5,13 @@ import { useMyStore } from "../utils/store";
 import { useEffect } from "react";
 
 function Crosshair() {
-  const { crosshairVisible, crosshairScale, setCrosshairScale } = useMyStore();
+  const { crosshairVisible, crosshairScale, crosshairActions } = useMyStore();
 
   extend({ CrosshairMaterial });
 
   useEffect(() => {
-    const handleMouseDown = (event) => setCrosshairScale(0.7);
-    const handleMouseUp = (event) => setCrosshairScale(1);
+    const handleMouseDown = (event) => crosshairActions.setCrosshairScale(0.7);
+    const handleMouseUp = (event) => crosshairActions.setCrosshairScale(1);
 
     document.addEventListener("mousedown", handleMouseDown);
     document.addEventListener("mouseup", handleMouseUp);
