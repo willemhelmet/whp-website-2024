@@ -23,13 +23,12 @@ export function JNL(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        receiveShadow
         geometry={nodes.Loft_Handrails_02.geometry}
         rotation={[0, Math.PI / 2, 0]}
         position={[0, -1, 0]}
       >
         {/*<meshStandardMaterial envMap={pisaEnvMap} />*/}
-        <meshMatcapMaterial matcap={matCap8} />
+        <meshMatcapMaterial matcap={matCap2} />
       </mesh>
     </group>
   );

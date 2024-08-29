@@ -1,19 +1,21 @@
 //import Floor from "./Floor.jsx";
 import { Suzanne } from "./Suzanne";
 import { Smiley } from "./Smiley";
-import { Sky } from "@react-three/drei";
+import { Text, Sky, Stars } from "@react-three/drei";
 import PortfolioImage from "./PortfolioImage.jsx";
 import PortfolioVideo from "./PortfolioVideo.jsx";
 import { JNL } from "./JNL.jsx";
 
 import { useControls } from "leva";
+import WHPText from "./WHPText.jsx";
+import { text } from "../data/text.js";
 
 function World() {
   const { x, y, z } = useControls({
     x: {
       value: 0,
-      min: -20,
-      max: 20,
+      min: -1.5,
+      max: 7.5,
       step: 0.01,
     },
     y: {
@@ -32,28 +34,36 @@ function World() {
   return (
     <group>
       <JNL />
-      {/*<Suzanne
-        castShadow
-        scale={[0.25, 0.25, 0.25]}
-        position={[-1.75, 0, -9]}
-        rotation={[0, Math.PI * 0.5, 0]}
-      />
-      <Smiley
-        scale={[0.25, 0.25, 0.25]}
-        rotation={[0, Math.PI * 0.5, 0]}
-        castShadow
-        position={[-1.75, 0, -8]}
-      />*/}
       <Sky
         distance={450000}
         sunPosition={[0, 1, 0]}
         inclination={0}
         azimuth={0.25}
       />
+      <Stars />
+      <Suzanne
+        position={[5.87, 0, -6.33]}
+        rotation={[0, -Math.PI * 0.35, 0]}
+        scale={[0.5, 0.5, 0.5]}
+      />
+      <Smiley
+        position={[-1.75, 0.75, -7.6]}
+        rotation={[0, -Math.PI * 0.35, 0]}
+        scale={[0.25, 0.25, 0.25]}
+      />
       {/* Hackathons */}
       <PortfolioImage
-        position={[3.17, 0.25, -13.35]}
+        position={[1, 0.75, -13.35]}
         src={"/portfolio/hack-sommilar.jpg"}
+      />
+      <PortfolioImage
+        position={[3.17, 0.75, -13.35]}
+        src={"/portfolio/edible-apartment.png"}
+      />
+      <PortfolioImage
+        position={[5.36, 0.75, -13.35]}
+        scale={[0.75, 0.75, 0.75]}
+        src={"/portfolio/hack-seereal.png"}
       />
       {/* Verizon 5G Stadium in Fortnite */}
       <PortfolioImage
@@ -65,9 +75,15 @@ function World() {
         position={[-2.1, 0.25, -12.1]}
         rotation={[0, Math.PI * 0.5, 0]}
         scale={[1.5, 1.5, 1.5]}
-        src={"/portfolio/5g-fortnite-pic.png"}
+        src={"/portfolio/5g-fortnite-pic.jpg"}
       />
       {/* Nike Watch Her Glow */}
+      <WHPText
+        position={[-1.2, 2, -4.5]}
+        rotation={[0, Math.PI * 0.5, 0]}
+        title={text[2].title}
+        body={text[2].body}
+      ></WHPText>
       <PortfolioVideo
         position={[-2.09, 0, -9.84]}
         rotation={[0, Math.PI * 0.5, 0]}
@@ -101,6 +117,12 @@ function World() {
         src={"/portfolio/nike-ar-filter.webm"}
       />
       {/* Snap Lenses */}
+      <WHPText
+        position={[6.75, 2.2, -2.5]}
+        rotation={[0, -Math.PI * 0.5, 0]}
+        title={text[1].title}
+        body={text[1].body}
+      ></WHPText>
       <PortfolioVideo
         position={[6.75, 0.2, -1.9]}
         rotation={[0, -Math.PI * 0.5, 0]}
@@ -134,6 +156,12 @@ function World() {
         src={"/portfolio/snap-watch.webm"}
       />
       {/* Vision pro */}
+      <WHPText
+        position={[3.91, 1.66, 0.37]}
+        rotation={[0, Math.PI, 0]}
+        title={text[0].title}
+        body={text[0].body}
+      ></WHPText>
       <PortfolioVideo
         position={[2.35, 0.2, 0.37]}
         rotation={[0, Math.PI, 0]}
@@ -202,5 +230,4 @@ function World() {
     </group>
   );
 }
-
 export default World;

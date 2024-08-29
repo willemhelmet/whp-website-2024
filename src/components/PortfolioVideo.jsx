@@ -33,13 +33,13 @@ function PortfolioVideo(props) {
       onClick={() => console.log("you clicked on a video")}
     >
       <meshBasicMaterial map={videoTexture} toneMapped={false} />
-      <motion.mesh
+      {/*<motion.mesh
         position={[0, 0, -0.01]}
         animate={{ scale: hovered ? 1.05 : 1 }}
       >
         <planeGeometry args={size} />
         <meshBasicMaterial color={"white"} />
-      </motion.mesh>
+      </motion.mesh>*/}
     </Plane>
   );
 }

@@ -1,5 +1,6 @@
 import { Physics } from "@react-three/cannon";
 import { Canvas } from "@react-three/fiber";
+import { Loader, Stats } from "@react-three/drei";
 
 import Lighting from "./components/Lighting.jsx";
 import Player from "./components/Player.jsx";
@@ -16,6 +17,8 @@ function App() {
           <World />
         </Physics>
       </Canvas>
+      <Loader />
+      <Stats />
     </div>
   );
 }
