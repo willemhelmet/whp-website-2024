@@ -5,6 +5,7 @@ import { Text, Sky, Stars } from "@react-three/drei";
 import PortfolioImage from "./PortfolioImage.jsx";
 import PortfolioVideo from "./PortfolioVideo.jsx";
 import { JNL } from "./JNL.jsx";
+import TriangleMan from "./TriangleMan.jsx";
 
 import { useControls } from "leva";
 import WHPText from "./WHPText.jsx";
@@ -34,6 +35,7 @@ function World() {
   return (
     <group>
       <JNL />
+      <TriangleMan position={[6.26, -0.5, -0.39]} />
       <Sky
         distance={450000}
         sunPosition={[0, 1, 0]}
@@ -56,15 +58,36 @@ function World() {
         position={[1, 0.75, -13.35]}
         src={"/portfolio/hack-sommilar.jpg"}
       />
+      <WHPText
+        position={[1, 0, -13.35]}
+        rotation={[0, 0, 0]}
+        scale={[0.4, 0.4, 0.4]}
+        title={text[8].title}
+        body={text[8].body}
+      ></WHPText>
       <PortfolioImage
         position={[3.17, 0.75, -13.35]}
         src={"/portfolio/edible-apartment.png"}
       />
+      <WHPText
+        position={[3.17, 0, -13.35]}
+        rotation={[0, 0, 0]}
+        scale={[0.4, 0.4, 0.4]}
+        title={text[6].title}
+        body={text[6].body}
+      ></WHPText>
       <PortfolioImage
         position={[5.36, 0.75, -13.35]}
         scale={[0.75, 0.75, 0.75]}
         src={"/portfolio/hack-seereal.png"}
       />
+      <WHPText
+        position={[5.36, 0, -13.35]}
+        rotation={[0, 0, 0]}
+        scale={[0.4, 0.4, 0.4]}
+        title={text[7].title}
+        body={text[7].body}
+      ></WHPText>
       {/* Verizon 5G Stadium in Fortnite */}
       <PortfolioImage
         position={[-1.3, 0.25, -13.35]}
@@ -77,6 +100,12 @@ function World() {
         scale={[1.5, 1.5, 1.5]}
         src={"/portfolio/5g-fortnite-pic.jpg"}
       />
+      <WHPText
+        position={[-0.84, -0.94, -11.33]}
+        rotation={[-Math.PI * 0.5, 0, Math.PI * 0.5]}
+        title={text[3].title}
+        body={text[3].body}
+      ></WHPText>
       {/* Nike Watch Her Glow */}
       <WHPText
         position={[-1.2, 2, -4.5]}
@@ -187,6 +216,12 @@ function World() {
         src={"/portfolio/vp-apollo-11-3.webm"}
       />
       {/* VR */}
+      <WHPText
+        position={[6, -0.94, -11.33]}
+        rotation={[-Math.PI * 0.5, 0, -Math.PI * 0.5]}
+        title={text[4].title}
+        body={text[4].body}
+      ></WHPText>
       <PortfolioVideo
         position={[6.75, 0.77, -12.73]}
         rotation={[0, -Math.PI * 0.5, 0]}
