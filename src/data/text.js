@@ -48,7 +48,7 @@ export const text = [
   ),
   generatePortfolioItem(
     "Previous Portfolio",
-    "SommeliAR is a virtual reality wine-tasting experience built in 24 hours. My role in this project was to design all the visual elements of the experience, which included modeling 3D assets, constructing virtual environments, and designing our project’s logo.",
+    "This is the previous portfolio that I built.",
   ),
 ];
 

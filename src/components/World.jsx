@@ -1,7 +1,9 @@
-import { Sky, Stars } from "@react-three/drei";
+import { Box, Sky, Stars } from "@react-three/drei";
 import { useControls } from "leva";
 
-import JNL from "./JNL.jsx";
+//import JNL from "./JNL.jsx";
+import Alien from "./Alien.jsx";
+import JNL2 from "./JNL_04.jsx";
 //import PhysicsBall from "./PhysicsBall.jsx";
 import PortfolioImage from "./PortfolioImage.jsx";
 import PortfolioVideo from "./PortfolioVideo.jsx";
@@ -10,32 +12,73 @@ import { text } from "../data/text.js";
 import Smiley from "./Smiley";
 import Suzanne from "./Suzanne";
 import TriangleMan from "./TriangleMan.jsx";
+import Apartment from "./Apartment_Maquette.jsx";
 
 function World() {
-  const { x, y, z } = useControls({
-    x: {
-      value: 0,
-      min: -1.5,
-      max: 7.5,
-      step: 0.01,
+  // const { x, y, z } = useControls({
+  //   x: {
+  //     value: 0,
+  //     min: -2.5,
+  //     max: 8.5,
+  //     step: 0.01,
+  //   },
+  //   y: {
+  //     value: 0,
+  //     min: -2,
+  //     max: 6,
+  //     step: 0.01,
+  //   },
+  //   z: {
+  //     value: 0,
+  //     min: -22,
+  //     max: 22,
+  //     step: 0.01,
+  //   },
+  // });
+  const { position, rotation, scale } = useControls({
+    position: {
+      x: 0,
+      y: 0,
+      z: 0,
     },
-    y: {
-      value: 0,
-      min: 0,
-      max: 4,
-      step: 0.01,
+    rotation: {
+      x: 0,
+      y: 0,
+      z: 0,
     },
-    z: {
-      value: 0,
-      min: -20,
-      max: 20,
-      step: 0.01,
+    scale: {
+      x: 1,
+      y: 1,
+      z: 1,
     },
   });
   return (
     <group>
-      <axesHelper position={[x, y, z]} />
-      <JNL />
+      <Alien
+        position={[-0.84, -0.354, -2.85]}
+        rotation={[0, -1.965, 0]}
+        scale={[0.08, 0.08, 0.08]}
+      />
+      <Apartment
+        position={[-5, 2, -9.75]}
+        rotation={[0, Math.PI * 1.5, 0]}
+        scale={[0.3, 0.3, 0.3]}
+      />
+      <Poster
+        position={[-4, 2, -9.75]}
+        rotation={[0, Math.PI * 0.5, 0]}
+        title={text[9].title}
+        body={text[9].body}
+      />
+      {/* Debug Box
+      <Box
+        position={[position.x, position.y, position.z]}
+        rotation={[rotation.x, rotation.y, rotation.z]}
+        args={[scale.x, scale.y, scale.z]}
+        material-color={"hotpink"}
+      /> */}
+      <axesHelper position={[position.x, position.y, position.z]} />
+      <JNL2 />
       <TriangleMan
         position={[6.26, -0.7, -0.39]}
         scale={0.7}

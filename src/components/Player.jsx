@@ -97,7 +97,7 @@ function Player() {
 
   useFrame(() => {
     ref.current.getWorldPosition(camera.position);
-    camera.position.y = camera.position.y + PLAYER_SIZE;
+    camera.position.y = camera.position.y + 1.35 - PLAYER_SIZE;
     frontVector.set(0, 0, Number(backward) - Number(forward));
     sideVector.set(Number(left) - Number(right), 0, 0);
     direction

@@ -10,8 +10,8 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
 - [React Three XR](https://github.com/pmndrs/xr) - Hopefully make it VR
 - [Leva](https://github.com/pmndrs/leva) - Debug
 - [GLTFJSX](https://github.com/pmndrs/gltfjsx) - Compress GLTFs into JSX modules
-- [Cannon.js](https://github.com/pmndrs/use-cannon)
-- [Framer Motion 3D](https://www.framer.com/motion/three-introduction/)
+- [Cannon.js](https://github.com/pmndrs/use-cannon) - Physics
+- [Framer Motion 3D](https://www.framer.com/motion/three-introduction/) - Animations
 
 ## Todo
 - [x] Get animation working
@@ -33,7 +33,12 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
   - [ ] Design backdrop
   - [ ] Adjust text sizes
   - [ ] Finish getting all current portfolio items in the space
-- [ ] Fix FPS controller bug == You move slower if the frame rate is lower
+- [x] Fix FPS controller bug == You move slower if the frame rate is lower
+- [ ] Furniture
+  - [ ] Greybox furniture placement
+  - [ ] Rearrange wall art to fit around furniture
+  - [ ] Add 3D portfolio items ontop of furniture
+  - [ ] Art pass
 
 ## Inspo / Funny ideas
 - Willems World
