@@ -19,17 +19,17 @@ function PortfolioVideo(props) {
     setHovered(true);
   }
 
-  function handleCursorOut() {
-    setCrosshairVisibility(false);
-    setHovered(false);
-  }
+  // function handleCursorOut() {
+  //   setCrosshairVisibility(false);
+  //   setHovered(false);
+  // }
 
   return (
     <Plane
       {...props}
       args={size}
-      onPointerOver={() => handleCursorOver()}
-      onPointerOut={() => handleCursorOut()}
+      // onPointerOver={() => handleCursorOver()}
+      // onPointerOut={() => handleCursorOut()}
       onClick={() => console.log("you clicked on a video")}
     >
       <meshBasicMaterial map={videoTexture} toneMapped={false} />

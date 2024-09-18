@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion-3d";
 import { useMyStore } from "../utils/store";
 
-export function Smiley(props) {
+export default function Smiley(props) {
   const ref = useRef();
   const { nodes, materials } = useGLTF("/models/smile-transformed.glb");
   const { setCrosshairVisibility } = useMyStore();

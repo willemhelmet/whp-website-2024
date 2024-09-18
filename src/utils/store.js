@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 export const useMyStore = create((set) => ({
   // default stuff used to learn store
+  // used by suze, i think
   count: 0,
   inc: () => set((state) => ({ count: state.count + 1 })),
 

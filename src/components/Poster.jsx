@@ -4,7 +4,7 @@ import { Text, Plane } from "@react-three/drei";
 // fonts, colors, backgrounds, etc.
 // figure out how to handle text with arbitrary lengths (overflow?)
 // Come up with a better name "Plaquard"?
-function WHPText({ ...props }) {
+function Poster({ ...props }) {
   return (
     <group {...props}>
       <Text position={[0, 0.5, 0]} fontSize={0.2} maxWidth={2} color={"black"}>
@@ -23,4 +23,4 @@ function WHPText({ ...props }) {
     </group>
   );
 }
-export default WHPText;
+export default Poster;

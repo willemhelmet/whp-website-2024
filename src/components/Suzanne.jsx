@@ -10,7 +10,7 @@ import { motion } from "framer-motion-3d";
 import { pisaEnvMap } from "../modules/envMaps";
 import { useMyStore } from "../utils/store";
 
-export function Suzanne(props) {
+export default function Suzanne(props) {
   const { nodes, materials } = useGLTF("/models/Suzanne-transformed.glb");
   const ref = useRef();
 

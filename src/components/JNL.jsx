@@ -17,11 +17,13 @@ import {
   matCap7,
   matCap8,
 } from "../modules/matcapMats";
+import InvisibleWalls from "./InvisibleWalls";
 
-export function JNL(props) {
+export default function JNL(props) {
   const { nodes, materials } = useGLTF("/models/JNL-transformed.glb");
   return (
     <group {...props} dispose={null}>
+      <InvisibleWalls />
       <mesh
         geometry={nodes.Loft_Handrails_02.geometry}
         rotation={[0, Math.PI / 2, 0]}

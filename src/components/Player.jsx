@@ -1,22 +1,27 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera, PointerLockControls } from "@react-three/drei";
+import { useSphere } from "@react-three/cannon";
 import Crosshair from "./Crosshair";
 import { useMyStore } from "../utils/store";
 import * as THREE from "three";
 
-/** TODO:
- * Look into changng WSAD into a physics based system
- */
 function Player() {
-  const ref = useRef();
-
   const direction = new THREE.Vector3();
   const frontVector = new THREE.Vector3();
   const sideVector = new THREE.Vector3();
-  const SPEED_SCALAR = 0.03;
+  const speed = new THREE.Vector3();
+  const SPEED_SCALAR = 4;
+  const PLAYER_SIZE = 0.5;
 
   const { camera } = useThree();
+
+  const [ref, api] = useSphere((index) => ({
+    mass: 1,
+    type: "Dynamic",
+    position: [0, -PLAYER_SIZE, 0],
+    args: [PLAYER_SIZE],
+  }));
 
   const {
     isMouseCaptured,
@@ -28,6 +33,7 @@ function Player() {
     movementActions,
   } = useMyStore();
 
+  // TODO: Toggle a "pause" menu that appears when the mouse isn't captured
   useEffect(() => {
     console.log("isMouseCaptured: " + isMouseCaptured);
   }, [isMouseCaptured]);
@@ -87,7 +93,11 @@ function Player() {
     };
   }, [handleKeyDown, handleKeyUp]);
 
+  const velocity = useRef([0, 0, 0]);
+
   useFrame(() => {
+    ref.current.getWorldPosition(camera.position);
+    camera.position.y = camera.position.y + PLAYER_SIZE;
     frontVector.set(0, 0, Number(backward) - Number(forward));
     sideVector.set(Number(left) - Number(right), 0, 0);
     direction
@@ -95,9 +105,10 @@ function Player() {
       .normalize()
       .multiplyScalar(SPEED_SCALAR)
       .applyEuler(camera.rotation);
-    ref.current.position.x += direction.x;
-    ref.current.position.z += direction.z;
+    speed.fromArray(velocity.current);
+    api.velocity.set(direction.x, -3, direction.z);
   });
+
   return (
     <group>
       <PerspectiveCamera ref={ref} makeDefault position={[0, 0, 0]}>
@@ -107,6 +118,7 @@ function Player() {
         onLock={() => setIsMouseCaptured(true)}
         onUnlock={() => setIsMouseCaptured(false)}
       />
+      <mesh ref={ref}></mesh>
     </group>
   );
 }
