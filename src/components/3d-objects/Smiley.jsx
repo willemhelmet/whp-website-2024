@@ -6,7 +6,7 @@ Files: smile.glb [30.77KB] > /Users/whp/Documents/HTML/whp-website-2024/public/m
 import { Float, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import { motion } from "framer-motion-3d";
-import { useMyStore } from "../utils/store";
+import { useMyStore } from "../../utils/store";
 
 export default function Smiley(props) {
   const ref = useRef();

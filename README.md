@@ -28,14 +28,14 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
 - [ ] Run every texture through tiny png
 - [ ] Create Text component
   - [x] import copy
-  - [ ] Find fonts
-  - [ ] Import fonts
-  - [ ] Design backdrop
-  - [ ] Adjust text sizes
+  - [x] Find fonts
+  - [x] Import fonts
+  - [x] Design backdrop
+  - [x] Adjust text sizes
   - [ ] Finish getting all current portfolio items in the space
 - [x] Fix FPS controller bug == You move slower if the frame rate is lower
 - [ ] Furniture
-  - [ ] Greybox furniture placement
+  - [x] Greybox furniture placement
   - [ ] Rearrange wall art to fit around furniture
   - [ ] Add 3D portfolio items ontop of furniture
   - [ ] Art pass
@@ -78,4 +78,3 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
     - This feels closer to the mark
   - Suburbs VOL. 19 - Retro Office
     - good office chairs and such
-  -

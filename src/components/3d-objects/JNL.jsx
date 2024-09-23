@@ -6,11 +6,11 @@ Files: JNL_04.glb [189.66KB] > /Users/whp/Documents/HTML/WHP WEBSITE ROOT/ASSETS
 
 import React from "react";
 import { useGLTF } from "@react-three/drei";
-import InvisibleWalls from "./InvisibleWalls";
-import { matCap2 } from "../modules/matcapMats";
+import InvisibleWalls from "../environment/InvisibleWalls";
+import { matCap2 } from "../../modules/matcapMats";
 
-export default function JNL2(props) {
-  const { nodes, materials } = useGLTF("/models/JNL_04-transformed.glb");
+export default function JNL(props) {
+  const { nodes, materials } = useGLTF("/models/JNL.glb");
   return (
     <group {...props} dispose={null}>
       <InvisibleWalls />

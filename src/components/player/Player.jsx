@@ -3,7 +3,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { PerspectiveCamera, PointerLockControls } from "@react-three/drei";
 import { useSphere } from "@react-three/cannon";
 import Crosshair from "./Crosshair";
-import { useMyStore } from "../utils/store";
+import { useMyStore } from "../../utils/store";
 import * as THREE from "three";
 
 function Player() {

@@ -2,10 +2,10 @@ import { Physics } from "@react-three/cannon";
 import { Canvas } from "@react-three/fiber";
 import { Loader, Stats } from "@react-three/drei";
 
-import Lighting from "./components/Lighting.jsx";
-import Player from "./components/Player.jsx";
+import Lighting from "./components/environment/Lighting.jsx";
+import Player from "./components/player/Player.jsx";
 
-import World from "./components/World.jsx";
+import World from "./components/environment/World.jsx";
 
 function App() {
   return (

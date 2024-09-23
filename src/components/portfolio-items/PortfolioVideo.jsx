@@ -1,7 +1,6 @@
 import { Plane, useVideoTexture } from "@react-three/drei";
-import { useMyStore } from "../utils/store";
-import { motion } from "framer-motion-3d";
 import { useState } from "react";
+import { useMyStore } from "../../utils/store";
 
 /** TODO:
  * Resize Plane so that video's dimensions are correct

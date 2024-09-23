@@ -1,7 +1,7 @@
 import { extend } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
-import { CrosshairMaterial } from "../modules/shaders/CrosshairMaterial";
-import { useMyStore } from "../utils/store";
+import { CrosshairMaterial } from "../../modules/shaders/CrosshairMaterial";
+import { useMyStore } from "../../utils/store";
 import { useEffect } from "react";
 
 function Crosshair() {

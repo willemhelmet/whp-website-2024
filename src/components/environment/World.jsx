@@ -1,40 +1,20 @@
 import { Box, Sky, Stars } from "@react-three/drei";
 import { useControls } from "leva";
 
-//import JNL from "./JNL.jsx";
-import Alien from "./Alien.jsx";
-import JNL2 from "./JNL_04.jsx";
+import Alien from "../3d-objects/Alien.jsx";
+import AndyAward from "../3d-objects/AndyAward.jsx";
+import JNL from "../3d-objects/JNL.jsx";
 //import PhysicsBall from "./PhysicsBall.jsx";
-import PortfolioImage from "./PortfolioImage.jsx";
-import PortfolioVideo from "./PortfolioVideo.jsx";
-import Poster from "./Poster.jsx";
-import { text } from "../data/text.js";
-import Smiley from "./Smiley";
-import Suzanne from "./Suzanne";
-import TriangleMan from "./TriangleMan.jsx";
-import Apartment from "./Apartment_Maquette.jsx";
+import PortfolioImage from "../portfolio-items/PortfolioImage.jsx";
+import PortfolioVideo from "../portfolio-items/PortfolioVideo.jsx";
+import Poster from "../portfolio-items/Poster.jsx";
+import { text } from "../../data/text.js";
+import Smiley from "../3d-objects/Smiley";
+import Suzanne from "../3d-objects/Suzanne";
+import TriangleMan from "../3d-objects/TriangleMan.jsx";
+import Apartment from "../3d-objects/Apartment_Maquette.jsx";
 
 function World() {
-  // const { x, y, z } = useControls({
-  //   x: {
-  //     value: 0,
-  //     min: -2.5,
-  //     max: 8.5,
-  //     step: 0.01,
-  //   },
-  //   y: {
-  //     value: 0,
-  //     min: -2,
-  //     max: 6,
-  //     step: 0.01,
-  //   },
-  //   z: {
-  //     value: 0,
-  //     min: -22,
-  //     max: 22,
-  //     step: 0.01,
-  //   },
-  // });
   const { position, rotation, scale } = useControls({
     position: {
       x: 0,
@@ -60,25 +40,22 @@ function World() {
         scale={[0.08, 0.08, 0.08]}
       />
       <Apartment
-        position={[-5, 2, -9.75]}
+        position={[-5, 1.98, -9.75]}
         rotation={[0, Math.PI * 1.5, 0]}
         scale={[0.3, 0.3, 0.3]}
       />
       <Poster
-        position={[-4, 2, -9.75]}
-        rotation={[0, Math.PI * 0.5, 0]}
+        position={[-3, 2.5, -12.05]}
+        rotation={[0, 0, 0]}
         title={text[9].title}
         body={text[9].body}
       />
-      {/* Debug Box
-      <Box
+      <axesHelper
         position={[position.x, position.y, position.z]}
         rotation={[rotation.x, rotation.y, rotation.z]}
-        args={[scale.x, scale.y, scale.z]}
-        material-color={"hotpink"}
-      /> */}
-      <axesHelper position={[position.x, position.y, position.z]} />
-      <JNL2 />
+        scale={[2, 2, 2]}
+      />
+      <JNL />
       <TriangleMan
         position={[6.26, -0.7, -0.39]}
         scale={0.7}
@@ -99,8 +76,8 @@ function World() {
       />
       <Stars />
       <Suzanne
-        position={[5.87, 0, -6.33]}
-        rotation={[0, -Math.PI * 0.35, 0]}
+        position={[-6.13, 2.53, -9]}
+        rotation={[0, Math.PI * 0.9, 0]}
         scale={[0.5, 0.5, 0.5]}
       />
       <Smiley
@@ -119,6 +96,7 @@ function World() {
         scale={[0.4, 0.4, 0.4]}
         title={text[8].title}
         body={text[8].body}
+        bodyYOffset={-0.17}
       ></Poster>
       <PortfolioImage
         position={[3.17, 0.75, -13.35]}
@@ -130,6 +108,7 @@ function World() {
         scale={[0.4, 0.4, 0.4]}
         title={text[6].title}
         body={text[6].body}
+        bodyYOffset={-0.17}
       ></Poster>
       <PortfolioImage
         position={[5.36, 0.75, -13.35]}
@@ -144,32 +123,45 @@ function World() {
         body={text[7].body}
       ></Poster>
       {/* Verizon 5G Stadium in Fortnite */}
+      <AndyAward
+        position={[-1.74, -0.25, -8.27]}
+        rotation={[0, Math.PI * 0.5, 0]}
+        scale={[0.75, 0.75, 0.75]}
+      />
       <PortfolioImage
-        position={[-1.3, 0.25, -13.35]}
+        position={[-2.1, -0.4, -11.87]}
+        rotation={[0, Math.PI * 0.5, 0]}
         scale={[1.5, 1.5, 1.5]}
         src={"/portfolio/5g-stadium.png"}
       />
       <PortfolioImage
-        position={[-2.1, 0.25, -12.1]}
+        position={[-2.1, 0.52, -11.63]}
         rotation={[0, Math.PI * 0.5, 0]}
         scale={[1.5, 1.5, 1.5]}
         src={"/portfolio/5g-fortnite-pic.jpg"}
       />
+      <PortfolioImage
+        position={[-2.1, 0.51, -8.51]}
+        rotation={[0, Math.PI * 0.5, 0]}
+        scale={[0.5, 0.5, 0.5]}
+        src={"/portfolio/5g-andy-award.jpg"}
+      />
       <Poster
-        position={[-0.84, -0.94, -11.33]}
-        rotation={[-Math.PI * 0.5, 0, Math.PI * 0.5]}
+        position={[-2.1, 0.5, -10]}
+        rotation={[0, Math.PI * 0.5, 0]}
         title={text[3].title}
         body={text[3].body}
+        scale={[0.8, 0.8, 0.8]}
       ></Poster>
       {/* Nike Watch Her Glow */}
       <Poster
-        position={[-1.35, 2, -4.5]}
+        position={[-1.32, 2, -4.5]}
         rotation={[0, Math.PI * 0.5, 0]}
         title={text[2].title}
         body={text[2].body}
       ></Poster>
       <PortfolioVideo
-        position={[-2.09, 0, -9.84]}
+        position={[-1.32, 2 + -1.34, -5.45]}
         rotation={[0, Math.PI * 0.5, 0]}
         width={410}
         height={250}
@@ -177,7 +169,7 @@ function World() {
         src={"/portfolio/nike-color-bars.webm"}
       />
       <PortfolioVideo
-        position={[-2.09, 0, -8.43]}
+        position={[-1.32, 1.5, -6.34]}
         rotation={[0, Math.PI * 0.5, 0]}
         width={960}
         height={512}
@@ -185,7 +177,7 @@ function World() {
         src={"/portfolio/nike-glowing-up.webm"}
       />
       <PortfolioVideo
-        position={[-1.35, 0.25, -6]}
+        position={[-1.32, 0.62, -4.14]}
         rotation={[0, Math.PI * 0.5, 0]}
         width={512}
         height={512}
@@ -193,7 +185,7 @@ function World() {
         src={"/portfolio/nike-watch-her-glow.webm"}
       />
       <PortfolioVideo
-        position={[-1.35, 0, -4.5]}
+        position={[-1.32, 0.27, -6.88]}
         rotation={[0, Math.PI * 0.5, 0]}
         width={360}
         height={640}
@@ -206,6 +198,7 @@ function World() {
         rotation={[0, -Math.PI * 0.5, 0]}
         title={text[1].title}
         body={text[1].body}
+        bodyYOffset={0.01}
       ></Poster>
       <PortfolioVideo
         position={[6.75, 0.2, -1.9]}
@@ -245,6 +238,7 @@ function World() {
         rotation={[0, Math.PI, 0]}
         title={text[0].title}
         body={text[0].body}
+        bodyYOffset={0.02}
       ></Poster>
       <PortfolioVideo
         position={[2.35, 0.2, 0.37]}

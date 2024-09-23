@@ -7,8 +7,8 @@ import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 
-import { pisaEnvMap } from "../modules/envMaps";
-import { useMyStore } from "../utils/store";
+import { pisaEnvMap } from "../../modules/envMaps";
+import { useMyStore } from "../../utils/store";
 
 export default function Suzanne(props) {
   const { nodes, materials } = useGLTF("/models/Suzanne-transformed.glb");

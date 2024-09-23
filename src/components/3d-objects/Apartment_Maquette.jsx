@@ -11,6 +11,7 @@ export default function Apartment(props) {
   const { nodes, materials } = useGLTF(
     "/models/Apartment_Maquette-transformed.glb",
   );
+
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube067.geometry} material={materials.Palette} />
