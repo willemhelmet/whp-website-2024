@@ -87,38 +87,39 @@ function World() {
       />
       {/* Hackathons */}
       <PortfolioImage
-        position={[1, 0.75, -13.35]}
+        position={[1, 0.75, -13.37]}
         src={"/portfolio/hack-sommilar.jpg"}
       />
       <Poster
-        position={[1, 0, -13.35]}
+        position={[1.02, 0, -13.37]}
         rotation={[0, 0, 0]}
-        scale={[0.4, 0.4, 0.4]}
+        scale={[0.35, 0.35, 0.35]}
         title={text[8].title}
         body={text[8].body}
         bodyYOffset={-0.17}
       ></Poster>
       <PortfolioImage
-        position={[3.17, 0.75, -13.35]}
+        position={[3.17, 0.75, -13.37]}
+        scale={[1.2, 1.2, 1.2]}
         src={"/portfolio/edible-apartment.png"}
       />
       <Poster
-        position={[3.17, 0, -13.35]}
+        position={[3.17, 0, -13.37]}
         rotation={[0, 0, 0]}
-        scale={[0.4, 0.4, 0.4]}
+        scale={[0.35, 0.35, 0.35]}
         title={text[6].title}
         body={text[6].body}
         bodyYOffset={-0.17}
       ></Poster>
       <PortfolioImage
-        position={[5.36, 0.75, -13.35]}
+        position={[5.36, 0.75, -13.37]}
         scale={[0.75, 0.75, 0.75]}
         src={"/portfolio/hack-seereal.png"}
       />
       <Poster
-        position={[5.36, 0, -13.35]}
+        position={[5.38, 0, -13.37]}
         rotation={[0, 0, 0]}
-        scale={[0.4, 0.4, 0.4]}
+        scale={[0.35, 0.35, 0.35]}
         title={text[7].title}
         body={text[7].body}
       ></Poster>
@@ -135,7 +136,7 @@ function World() {
         src={"/portfolio/5g-stadium.png"}
       />
       <PortfolioImage
-        position={[-2.1, 0.52, -11.63]}
+        position={[-2.1, 0.62, -11.63]}
         rotation={[0, Math.PI * 0.5, 0]}
         scale={[1.5, 1.5, 1.5]}
         src={"/portfolio/5g-fortnite-pic.jpg"}
@@ -194,22 +195,23 @@ function World() {
       />
       {/* Snap Lenses */}
       <Poster
-        position={[6.75, 2.2, -2.5]}
+        position={[6.75, 0.2, -1.85]}
         rotation={[0, -Math.PI * 0.5, 0]}
+        scale={[0.85, 0.85, 0.85]}
         title={text[1].title}
         body={text[1].body}
         bodyYOffset={0.01}
       ></Poster>
       <PortfolioVideo
-        position={[6.75, 0.2, -1.9]}
+        position={[6.75, 0.2, -3.4]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={320}
         height={576}
-        scale={0.05}
+        scale={0.046}
         src={"/portfolio/snap-elephant-body.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.2, -2.9]}
+        position={[6.75, 0.2, -4.4]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={269}
         height={480}
@@ -217,7 +219,7 @@ function World() {
         src={"/portfolio/snap-eyebrows.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.2, -3.9]}
+        position={[6.75, 0.2, -5.4]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={267}
         height={480}
@@ -225,7 +227,7 @@ function World() {
         src={"/portfolio/snap-relighting.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.2, -4.9]}
+        position={[6.75, 0.2, -6.4]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={267}
         height={480}
@@ -234,14 +236,15 @@ function World() {
       />
       {/* Vision pro */}
       <Poster
-        position={[3.91, 1.66, 0.37]}
+        position={[2.6, 1.5, 0.37]}
         rotation={[0, Math.PI, 0]}
+        scale={[0.85, 0.85, 0.85]}
         title={text[0].title}
         body={text[0].body}
         bodyYOffset={0.02}
       ></Poster>
       <PortfolioVideo
-        position={[2.35, 0.2, 0.37]}
+        position={[2.6, 0.2, 0.37]}
         rotation={[0, Math.PI, 0]}
         width={640}
         height={480}
@@ -249,7 +252,7 @@ function World() {
         src={"/portfolio/vp-apollo-11-1.webm"}
       />
       <PortfolioVideo
-        position={[4.05, 0.2, 0.37]}
+        position={[4.35, 1.5, 0.37]}
         rotation={[0, Math.PI, 0]}
         width={640}
         height={480}
@@ -257,7 +260,7 @@ function World() {
         src={"/portfolio/vp-apollo-11-2.webm"}
       />
       <PortfolioVideo
-        position={[5.75, 0.2, 0.37]}
+        position={[4.35, 0.2, 0.37]}
         rotation={[0, Math.PI, 0]}
         width={640}
         height={480}
@@ -266,49 +269,50 @@ function World() {
       />
       {/* VR */}
       <Poster
-        position={[6, -0.94, -11.33]}
-        rotation={[-Math.PI * 0.5, 0, -Math.PI * 0.5]}
+        position={[6.75, 0.22, -10.58]}
+        rotation={[0, -Math.PI * 0.5, 0]}
+        scale={[0.5, 0.5, 0.5]}
         title={text[4].title}
         body={text[4].body}
       ></Poster>
       <PortfolioVideo
-        position={[6.75, 0.77, -12.73]}
+        position={[6.75, 0.72, -12.73]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={512}
         height={256}
-        scale={0.05}
+        scale={0.045}
         src={"/portfolio/vr-cave-1.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.07, -12.73]}
+        position={[6.75, 0.15, -12.73]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={512}
         height={256}
-        scale={0.05}
+        scale={0.045}
         src={"/portfolio/vr-cave-2.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.07, -11.375]}
+        position={[6.75, -0.05, -11.65]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={512}
         height={256}
-        scale={0.05}
+        scale={0.045}
         src={"/portfolio/vr-sillytown-1.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.77, -11.375]}
+        position={[6.75, 0.52, -11.65]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={512}
         height={256}
-        scale={0.05}
+        scale={0.045}
         src={"/portfolio/vr-sillytown-2.webm"}
       />
       <PortfolioVideo
-        position={[6.75, 0.07, -10.02]}
+        position={[6.75, -0.4, -12.73]}
         rotation={[0, -Math.PI * 0.5, 0]}
         width={512}
         height={256}
-        scale={0.05}
+        scale={0.045}
         src={"/portfolio/vr-sillytown-3.webm"}
       />
     </group>

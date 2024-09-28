@@ -7,15 +7,18 @@ Files: JNL_04.glb [189.66KB] > /Users/whp/Documents/HTML/WHP WEBSITE ROOT/ASSETS
 import React from "react";
 import { useGLTF } from "@react-three/drei";
 import InvisibleWalls from "../environment/InvisibleWalls";
-import { matCap2 } from "../../modules/matcapMats";
+import * as THREE from "three";
 
 export default function JNL(props) {
+  const textureLoader = new THREE.TextureLoader();
+  const JNLTex = textureLoader.load("/textures/JNL_Bake.jpg");
+  JNLTex.flipY = false;
   const { nodes, materials } = useGLTF("/models/JNL.glb");
   return (
     <group {...props} dispose={null}>
       <InvisibleWalls />
-      <mesh geometry={nodes.Loft_Handrails.geometry} position={[0, -1, 0]}>
-        <meshMatcapMaterial matcap={matCap2} />
+      <mesh geometry={nodes.JNL_06.geometry} position={[0, -1, 0]}>
+        <meshBasicMaterial map={JNLTex} />
       </mesh>
     </group>
   );

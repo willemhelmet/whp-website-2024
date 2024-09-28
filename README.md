@@ -39,7 +39,9 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
   - [ ] Rearrange wall art to fit around furniture
   - [ ] Add 3D portfolio items ontop of furniture
   - [ ] Art pass
-
+- [ ] Hosting
+  - Free github hosting: https://github.com/ErickKS/vite-deploy?tab=readme-ov-file
+`
 ## Inspo / Funny ideas
 - Willems World
   - https://www.youtube.com/watch?v=I0kKUGTi8hw

@@ -28,7 +28,7 @@ export const text = [
   ),
   generatePortfolioItem(
     "VR Work",
-    "In 2020 I created a number of experimental VR narratives using Unreal Engine. ",
+    "In 2020, I created several experimental VR experiences using the Unreal Engine, exploring the potential of immersive storytelling and interactive design in virtual environments.",
   ),
   generatePortfolioItem(
     "Alien Photogrammetry",
