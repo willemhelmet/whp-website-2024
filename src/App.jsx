@@ -1,14 +1,13 @@
-import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
 import { Loader, KeyboardControls } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
 
-import Lighting from "./components/environment/Lighting.jsx";
-//import Player from "./components/player/Player.jsx";
+import Joystick from "./components/player/Joystick.jsx";
 
 import World from "./components/environment/World.jsx";
+import Lighting from "./components/environment/Lighting.jsx";
 
-import Ecctrl, { EcctrlJoystick } from "ecctrl";
-import { MobileView } from "react-device-detect";
+import Ecctrl from "ecctrl";
 import { Suspense } from "react";
 
 function App() {
@@ -21,15 +20,12 @@ function App() {
 
   return (
     <div className="App">
-      <MobileView>
-        <EcctrlJoystick buttonNumber={0} />
-      </MobileView>
+      <Joystick />
       <KeyboardControls map={keyboardControlsMap}>
         <Canvas shadows className="webgl">
           <Lighting />
           <Suspense>
             <Physics gravity={[0, -9.8, 0]}>
-              {/*<Player />*/}
               <Ecctrl
                 position={[0, 0, 0]}
                 rotation={[0, Math.PI, 0]}

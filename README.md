@@ -41,9 +41,9 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
   - [ ] Art pass
 - [x] Hosting
   - Netlify
-- [ ] Mobile
-  - [ ] Implement this package https://www.npmjs.com/package/react-device-detect
-  - [ ] Try implementing ecctrl https://github.com/pmndrs/ecctrl?tab=readme-ov-file
+- [x] Mobile
+  - [x] Implement this package https://www.npmjs.com/package/react-device-detect
+  - [x] Try implementing ecctrl https://github.com/pmndrs/ecctrl?tab=readme-ov-file
 - [ ] Splash Screen
   - [ ] Design entry screen
   - [ ] Add controls description
