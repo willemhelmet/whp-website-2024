@@ -37,6 +37,7 @@ function App() {
                 turnVelMultiplier={1} // Turning speed same as moving speed
                 turnSpeed={100} // give it big turning speed to prevent turning wait time
                 mode="CameraBasedMovement" // character's rotation will follow camera's rotation in this mode
+                camZoomSpeed={0}
               />
               <World />
             </Physics>

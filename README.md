@@ -10,8 +10,9 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
 - [React Three XR](https://github.com/pmndrs/xr) - Hopefully make it VR
 - [Leva](https://github.com/pmndrs/leva) - Debug
 - [GLTFJSX](https://github.com/pmndrs/gltfjsx) - Compress GLTFs into JSX modules
-- [Cannon.js](https://github.com/pmndrs/use-cannon) - Physics
+- [react-three-rapier](https://github.com/pmndrs/react-three-rapier) - Physics
 - [Framer Motion 3D](https://www.framer.com/motion/three-introduction/) - Animations
+- [Ecctrl](https://github.com/pmndrs/ecctrl) - Player controller/capsule collider
 
 ## Todo
 - [x] Get animation working
