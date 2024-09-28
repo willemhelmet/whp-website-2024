@@ -15,23 +15,23 @@ import TriangleMan from "../3d-objects/TriangleMan.jsx";
 import Apartment from "../3d-objects/Apartment_Maquette.jsx";
 
 function World() {
-  const { position, rotation, scale } = useControls({
-    position: {
-      x: 0,
-      y: 0,
-      z: 0,
-    },
-    rotation: {
-      x: 0,
-      y: 0,
-      z: 0,
-    },
-    scale: {
-      x: 1,
-      y: 1,
-      z: 1,
-    },
-  });
+  // const { position, rotation, scale } = useControls({
+  //   position: {
+  //     x: 0,
+  //     y: 0,
+  //     z: 0,
+  //   },
+  //   rotation: {
+  //     x: 0,
+  //     y: 0,
+  //     z: 0,
+  //   },
+  //   scale: {
+  //     x: 1,
+  //     y: 1,
+  //     z: 1,
+  //   },
+  // });
   return (
     <group>
       <Alien
@@ -50,11 +50,12 @@ function World() {
         title={text[9].title}
         body={text[9].body}
       />
+      {/*
       <axesHelper
         position={[position.x, position.y, position.z]}
         rotation={[rotation.x, rotation.y, rotation.z]}
         scale={[2, 2, 2]}
-      />
+      /> */}
       <JNL />
       <TriangleMan
         position={[6.26, -0.7, -0.39]}
