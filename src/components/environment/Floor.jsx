@@ -1,11 +1,12 @@
-import { usePlane } from "@react-three/cannon";
+import { RigidBody } from "@react-three/rapier";
 
 export default function Floor() {
-  const [ref] = usePlane(() => ({
-    type: "Static",
-    mass: 0,
-    position: [0, -1, 0],
-    rotation: [-Math.PI * 0.5, 0, 0],
-  }));
-  return <mesh ref={ref}></mesh>;
+  //<Plane args={[50, 50]} rotation={[-Math.PI * 0.5, 0, 0]} />
+  return (
+    <RigidBody type="fixed" position={[0, -1.5, 0]}>
+      <mesh>
+        <boxGeometry args={[50, 1, 50]} />
+      </mesh>
+    </RigidBody>
+  );
 }

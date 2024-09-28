@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { PerspectiveCamera, PointerLockControls } from "@react-three/drei";
+import {
+  PerspectiveCamera,
+  PointerLockControls,
+  useKeyboardControls,
+} from "@react-three/drei";
 import { useSphere } from "@react-three/cannon";
 import Crosshair from "./Crosshair";
 import { useMyStore } from "../../utils/store";
@@ -23,83 +27,26 @@ function Player() {
     args: [PLAYER_SIZE],
   }));
 
-  const {
-    isMouseCaptured,
-    setIsMouseCaptured,
-    forward,
-    backward,
-    left,
-    right,
-    movementActions,
-  } = useMyStore();
+  const { isMouseCaptured, setIsMouseCaptured } = useMyStore();
 
   // TODO: Toggle a "pause" menu that appears when the mouse isn't captured
   useEffect(() => {
     console.log("isMouseCaptured: " + isMouseCaptured);
   }, [isMouseCaptured]);
 
-  const handleKeyDown = useCallback(
-    (e) => {
-      switch (e.code) {
-        case "KeyW":
-          movementActions.setForward(true);
-          break;
-        case "KeyS":
-          movementActions.setBackward(true);
-          break;
-        case "KeyA":
-          movementActions.setLeft(true);
-          break;
-        case "KeyD":
-          movementActions.setRight(true);
-          break;
-        default:
-          return;
-      }
-    },
-    [movementActions],
-  );
-
-  const handleKeyUp = useCallback(
-    (e) => {
-      switch (e.code) {
-        case "KeyW":
-          movementActions.setForward(false);
-          break;
-        case "KeyS":
-          movementActions.setBackward(false);
-          break;
-        case "KeyA":
-          movementActions.setLeft(false);
-          break;
-        case "KeyD":
-          movementActions.setRight(false);
-          break;
-        default:
-          return;
-      }
-    },
-    [movementActions],
-  );
-
-  useEffect(() => {
-    document.addEventListener("keydown", (e) => handleKeyDown(e));
-    document.addEventListener("keyup", (e) => handleKeyUp(e));
-
-    // Called when component is unmounted
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("keyup", handleKeyUp);
-    };
-  }, [handleKeyDown, handleKeyUp]);
-
   const velocity = useRef([0, 0, 0]);
 
+  // WHP - figuring out ecctrl
+  const [, get] = useKeyboardControls();
+
   useFrame(() => {
+    // WHP - figuring out ecctrl
+    const { forward, backward, leftward, rightward } = get();
+
     ref.current.getWorldPosition(camera.position);
     camera.position.y = camera.position.y + 1.35 - PLAYER_SIZE;
     frontVector.set(0, 0, Number(backward) - Number(forward));
-    sideVector.set(Number(left) - Number(right), 0, 0);
+    sideVector.set(Number(leftward) - Number(rightward), 0, 0);
     direction
       .subVectors(frontVector, sideVector)
       .normalize()

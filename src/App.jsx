@@ -1,22 +1,52 @@
-import { Physics } from "@react-three/cannon";
+import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
-import { Loader } from "@react-three/drei";
+import { Loader, KeyboardControls } from "@react-three/drei";
 
 import Lighting from "./components/environment/Lighting.jsx";
-import Player from "./components/player/Player.jsx";
+//import Player from "./components/player/Player.jsx";
 
 import World from "./components/environment/World.jsx";
 
+import Ecctrl, { EcctrlJoystick } from "ecctrl";
+import { MobileView } from "react-device-detect";
+import { Suspense } from "react";
+
 function App() {
+  const keyboardControlsMap = [
+    { name: "forward", keys: ["ArrowUp", "KeyW"] },
+    { name: "backward", keys: ["ArrowDown", "KeyS"] },
+    { name: "leftward", keys: ["ArrowLeft", "KeyA"] },
+    { name: "rightward", keys: ["ArrowRight", "KeyD"] },
+  ];
+
   return (
     <div className="App">
-      <Canvas shadows className="webgl">
-        <Lighting />
-        <Physics gravity={[0, -9.8, 0]}>
-          <Player />
-          <World />
-        </Physics>
-      </Canvas>
+      <MobileView>
+        <EcctrlJoystick buttonNumber={0} />
+      </MobileView>
+      <KeyboardControls map={keyboardControlsMap}>
+        <Canvas shadows className="webgl">
+          <Lighting />
+          <Suspense>
+            <Physics gravity={[0, -9.8, 0]}>
+              {/*<Player />*/}
+              <Ecctrl
+                position={[0, 0, 0]}
+                rotation={[0, Math.PI, 0]}
+                camCollision={false} // disable camera collision detect (useless in FP mode)
+                camInitDis={-0.01} // camera intial position
+                camMinDis={-0.01} // camera zoom in closest position
+                camFollowMult={1000} // give a big number here, so the camera follows the target (character) instantly
+                camLerpMult={1000} // give a big number here, so the camera lerp to the followCam position instantly
+                turnVelMultiplier={1} // Turning speed same as moving speed
+                turnSpeed={100} // give it big turning speed to prevent turning wait time
+                mode="CameraBasedMovement" // character's rotation will follow camera's rotation in this mode
+              />
+              <World />
+            </Physics>
+          </Suspense>
+        </Canvas>
+      </KeyboardControls>
       <Loader />
     </div>
   );

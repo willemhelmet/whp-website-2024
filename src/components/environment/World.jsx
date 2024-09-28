@@ -33,7 +33,7 @@ function World() {
   //   },
   // });
   return (
-    <group>
+    <group rotation={[0, Math.PI, 0]}>
       <Alien
         position={[-0.84, -0.354, -2.85]}
         rotation={[0, -1.965, 0]}
@@ -81,11 +81,11 @@ function World() {
         rotation={[0, Math.PI * 0.9, 0]}
         scale={[0.5, 0.5, 0.5]}
       />
-      <Smiley
+      {/*<Smiley
         position={[-1.75, 0.75, -7.6]}
         rotation={[0, -Math.PI * 0.35, 0]}
         scale={[0.25, 0.25, 0.25]}
-      />
+      />*/}
       {/* Hackathons */}
       <PortfolioImage
         position={[1, 0.75, -13.37]}

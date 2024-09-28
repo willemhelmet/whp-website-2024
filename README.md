@@ -26,22 +26,28 @@ My current idea is to create a 3D museum that can be explored on mobile, compute
   - [x] Check current loading time with "Pretty Fast" profile and no caching (see network tab)
 - [x] Implement stats
 - [ ] Run every texture through tiny png
-- [ ] Create Text component
+- [x] Create Text component
   - [x] import copy
   - [x] Find fonts
   - [x] Import fonts
   - [x] Design backdrop
   - [x] Adjust text sizes
-  - [ ] Finish getting all current portfolio items in the space
+  - [x] Finish getting all current portfolio items in the space
 - [x] Fix FPS controller bug == You move slower if the frame rate is lower
 - [ ] Furniture
   - [x] Greybox furniture placement
-  - [ ] Rearrange wall art to fit around furniture
+  - [x] Rearrange wall art to fit around furniture
   - [ ] Add 3D portfolio items ontop of furniture
   - [ ] Art pass
-- [ ] Hosting
-  - Free github hosting: https://github.com/ErickKS/vite-deploy?tab=readme-ov-file
-`
+- [x] Hosting
+  - Netlify
+- [ ] Mobile
+  - [ ] Implement this package https://www.npmjs.com/package/react-device-detect
+  - [ ] Try implementing ecctrl https://github.com/pmndrs/ecctrl?tab=readme-ov-file
+- [ ] Splash Screen
+  - [ ] Design entry screen
+  - [ ] Add controls description
+
 ## Inspo / Funny ideas
 - Willems World
   - https://www.youtube.com/watch?v=I0kKUGTi8hw
