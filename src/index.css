@@ -1,11 +1,10 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html,
-body
-{
+body {
     overflow: hidden;
 }
 
@@ -13,14 +12,44 @@ body
     height: 100vh;
 }
 
-.webgl
-{
+.webgl {
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
+    z-index: 0;
 }
 
 .App {
     height: 100%;
+}
+
+@font-face {
+    font-family: "InterBlack";
+    src: url("fonts/inter_black.woff");
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face {
+    font-family: "InterMedium";
+    src: url("fonts/inter_medium.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu {
+    font-family: InterMedium, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 100%;
+    padding: 10px 0px 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    font-size: 12px;
 }

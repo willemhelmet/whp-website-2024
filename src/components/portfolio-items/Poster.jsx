@@ -9,18 +9,18 @@ function Poster({ ...props }) {
     <group {...props}>
       <Text
         position={[0, 0.5, 0]}
-        font={"/fonts/Inter-Bold.woff"}
+        font={"/fonts/inter_black.woff"}
         fontSize={0.15}
         maxWidth={1.8}
         color={"black"}
         anchorX={"center"}
         anchorY={"center"}
-        letterSpacing={-0.07}
+        letterSpacing={-0.05}
       >
         {props.title}
       </Text>
       <Text
-        font={"/fonts/Inter-Regular.woff"}
+        font={"/fonts/inter_medium.woff"}
         maxWidth={1.8}
         whiteSpace={"normal"}
         position={[0, props.bodyYOffset ? props.bodyYOffset : -0.1, 0]}

@@ -5,7 +5,7 @@ export default function Floor() {
   return (
     <RigidBody type="fixed" position={[0, -1.5, 0]}>
       <mesh>
-        <boxGeometry args={[50, 1, 50]} />
+        <boxGeometry args={[15, 1, 30]} />
       </mesh>
     </RigidBody>
   );

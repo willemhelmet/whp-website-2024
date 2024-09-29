@@ -48,7 +48,7 @@ export const text = [
   ),
   generatePortfolioItem(
     "Previous Portfolio",
-    "This is the previous portfolio that I built.",
+    "This is the previous portfolio that I built. The space is based on the apartment I spent the majority of the Covid-19 lockdown inside of.",
   ),
 ];
 
